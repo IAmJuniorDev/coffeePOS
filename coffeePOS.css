@@ -1,0 +1,345 @@
+.coffeePOS-container{
+    font-family: sans-serif;
+    width:100%;
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap:50px;
+    padding: 25px;
+}
+/*////////////////////////
+/////Coffee-side zone/////
+////////////////////////*/
+.coffeeDetail-container{
+    display:grid;
+    row-gap: 25px;
+}
+
+.coffee-container{
+    display:grid;
+    background-color:rgb(129, 91, 33);
+    padding:25px; 
+    border-radius: 11px;
+    grid-template-rows: auto;
+    width:auto;
+    height:auto;
+}
+
+.coffee-container h3{
+    margin-bottom:1.75rem;
+    padding:0 0 0 35px;
+    color:#fff;
+}
+
+.coffee-content{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(170px,170px));
+    gap:35px;
+    justify-content: center;
+    margin-bottom:10px;
+    user-select:none;
+}
+
+.flip-card{
+    width:170px;
+    height:200px;
+    perspective:1000px;
+    cursor:pointer;
+    padding:0;
+}
+
+.flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.5);
+    border-radius: 11px;
+    perspective:1000px;
+}
+
+.flipped .flip-card-inner{
+    transform:rotateY(180deg);
+}
+
+.card-front, .card-back{
+    position:absolute;
+    display:grid;
+    background-color:#fff;
+    width:100%;
+    height:100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    padding:5px;
+}
+
+.card-front{z-index:1;}
+
+.coffee-img-size{
+    width:155px;
+    height:155px;
+    justify-self: center;
+}
+
+.card-front h2{
+    color:#6c757d;
+    justify-self: center;
+    margin:1px;
+}
+
+.card-back{
+    transform:rotateY(180deg);
+    grid-row:auto;
+}
+
+.card-back h3{
+    color:black;
+    margin:5px 0 0;
+    padding:0;
+    justify-self: center;
+    height:5px;
+}
+
+.radio-container{
+    width:100%;
+    height:fit-content;
+    justify-self: center;
+    display:flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.coffee-selection{
+    align-self:center;
+    width: 35px;
+    height:35px;
+    display:flex;
+    position:relative;
+    border: 0.25px solid white;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+}
+
+.coffee-selection:not(:last-child){
+    margin-right:-1px;
+}
+
+.S:hover,.M:hover,.L:hover{
+  background-color:rgb(160,160,160);
+  color:white;
+}
+
+.size-clicked{
+    background-color:rgb(190,190,190);
+    color:white;
+}
+
+.S{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px;
+}
+
+.L{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius:5px;
+}
+
+.coffee-selection input{
+    position:absolute;
+    margin:0;
+    visibility:hidden;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+
+.coffee-selection div{
+    position:absolute;
+    font-size:20px;
+    font-weight:500;
+}
+
+.amount-container{
+    width:100%;
+    height:fit-content;
+    display:flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.amount-container span{
+    width:35px;
+    height:35px;
+    border:0.25px solid gray;
+    display:flex;
+    justify-content: center;
+}
+
+.amount-container span:not(:last-child){
+    margin-right:-1px;
+}
+
+.coffee-sub{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px;
+}
+
+.coffee-plus{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius:5px;
+}
+
+.coffee-plus:active,
+.coffee-sub:active{
+    outline:auto;
+}
+
+.amount-container span div{
+    align-self: center;
+}
+
+.card-back button{
+    width:80px;
+    height:30px;
+    justify-self: center;
+    padding:0;
+    background-color: rgb(255, 153, 0);
+    border:0;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.card-back button:active{
+    background-color: rgb(255, 115, 0);
+}
+/*/////////////////////
+////////ORder zone/////
+/////////////////////*/
+.coffeeOrder-layout{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap:25px;
+}
+
+.coffeeOrder-container{
+    display:grid;
+    border-radius: 11px;
+    background-color: #fff;
+    padding:10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width:100%;
+    grid-template-rows:max-content;
+}
+
+.coffeeOrder-container h3{
+    justify-self: center;
+    margin-bottom:10px;
+}
+
+.coffeeOrder-container h2{
+    margin:0;
+    height:fit-content;
+}
+
+.order-container{
+    border-radius:5px ;
+    border:0.25px solid gray;
+    min-width:100%;
+    max-height:90%;
+    min-height:445px;
+    display:grid;
+    grid-template-rows: 22% 70% 8%;
+    padding:10px;
+}
+
+.order-header{
+    display:grid;
+    width:100%;
+}
+
+.order-header b,
+.order-header p{
+    justify-self: center;
+    margin:5px 0;
+}
+
+.order-info{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.edit-coffee-overflow{
+    width:100%;
+    height:100%;
+    max-height:280px;
+    overflow-y: auto;
+}
+
+.order-info table{
+    width:100%;
+
+}
+
+.order-info table tbody{
+    width:100%;
+}
+
+.order-info tr{
+    width:100%;
+    display:grid;
+    grid-template-columns: 60% 17% 23%;
+}
+
+.order-info td:nth-child(3){
+    justify-self: end;
+}
+
+.coffeeTotalPrice{
+    align-self: end;
+    max-height:max-content;
+    display:flex;
+    justify-content: space-between;
+}
+
+.coffeeTotalPrice b{
+    display:inline-block;
+    margin:0;
+}
+
+.coffee-button{
+    display:flex;
+    justify-content: space-between;
+    padding:0 10px;
+}
+
+.coffee-button ion-icon{
+    align-self:center;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    color:rgb(255, 153, 0);
+    user-select: none;
+}
+
+.coffee-button ion-icon:active{
+    width:27px;
+    height:27px;
+    color:rgb(255, 115, 0);
+}
+
+.coffee-button button{
+    width:60px;
+    height:30px;
+    align-self:center;
+    border:0;
+    border-radius:8px ;
+    background-color:rgb(255,153,0);
+}
+
+.coffee-button button:active{
+    background-color:rgb(255,115,0);
+    width:58px;
+    height:28px;
+    color:white;
+}
